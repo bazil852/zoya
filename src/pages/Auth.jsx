@@ -66,9 +66,9 @@ export default function Auth() {
             {isSignUp ? 'Create Account' : 'Welcome Back'}
           </h1>
           <p className="text-gray-600">
-            {isSignUp 
-              ? 'Start renting and listing items today' 
-              : 'Sign in to continue to RentHub'}
+            {isSignUp
+              ? 'Start renting and listing items today'
+              : 'Sign in to continue to Rentique'}
           </p>
         </div>
 

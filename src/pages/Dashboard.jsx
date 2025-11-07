@@ -9,14 +9,14 @@ import { supabase } from '../lib/supabaseClient'
 import { useAuth } from '../contexts/AuthContext'
 
 const categories = [
-  { id: 'electronics', name: 'Electronics', icon: Smartphone, color: 'bg-blue-500', count: 1250 },
-  { id: 'gaming', name: 'Gaming', icon: Gamepad2, color: 'bg-purple-500', count: 850 },
-  { id: 'automotive', name: 'Automotive', icon: Car, color: 'bg-red-500', count: 650 },
-  { id: 'home', name: 'Home & Garden', icon: Home, color: 'bg-green-500', count: 920 },
-  { id: 'tools', name: 'Tools', icon: Wrench, color: 'bg-orange-500', count: 750 },
-  { id: 'sports', name: 'Sports', icon: Dumbbell, color: 'bg-cyan-500', count: 680 },
-  { id: 'photography', name: 'Photography', icon: Camera, color: 'bg-pink-500', count: 450 },
-  { id: 'music', name: 'Music', icon: Music, color: 'bg-indigo-500', count: 320 },
+  { id: 'electronics', name: 'Electronics', icon: Smartphone, color: 'bg-black', count: 1250 },
+  { id: 'gaming', name: 'Gaming', icon: Gamepad2, color: 'bg-gray-800', count: 850 },
+  { id: 'automotive', name: 'Automotive', icon: Car, color: 'bg-gray-700', count: 650 },
+  { id: 'home', name: 'Home & Garden', icon: Home, color: 'bg-gray-600', count: 920 },
+  { id: 'tools', name: 'Tools', icon: Wrench, color: 'bg-gray-700', count: 750 },
+  { id: 'sports', name: 'Sports', icon: Dumbbell, color: 'bg-gray-800', count: 680 },
+  { id: 'photography', name: 'Photography', icon: Camera, color: 'bg-black', count: 450 },
+  { id: 'music', name: 'Music', icon: Music, color: 'bg-gray-600', count: 320 },
 ]
 
 export default function Dashboard() {
@@ -78,8 +78,8 @@ export default function Dashboard() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center gap-4">
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                RentHub
+              <h1 className="text-2xl font-bold text-black">
+                Rentique
               </h1>
               <span className="text-sm text-gray-500 font-medium">PREMIUM</span>
             </div>
@@ -90,7 +90,7 @@ export default function Dashboard() {
               </div>
               <Link
                 to="/profile"
-                className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-medium"
+                className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-medium"
               >
                 {userProfile?.name?.charAt(0) || 'U'}
               </Link>
@@ -100,20 +100,49 @@ export default function Dashboard() {
       </div>
 
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="text-center mb-8">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Rent Anything, <span className="text-yellow-300">Anytime</span>
+      <div className="bg-black text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="text-center mb-12">
+            {/* Hero Vector Illustration */}
+            <div className="mb-8 flex justify-center">
+              <svg width="300" height="120" viewBox="0 0 300 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full max-w-sm">
+                {/* Minimalist Circles */}
+                <circle cx="60" cy="60" r="35" stroke="#ffffff" strokeWidth="0.5" opacity="0.3"/>
+                <circle cx="150" cy="60" r="35" stroke="#ffffff" strokeWidth="0.5" opacity="0.3"/>
+                <circle cx="240" cy="60" r="35" stroke="#ffffff" strokeWidth="0.5" opacity="0.3"/>
+
+                {/* Camera Icon - Minimal */}
+                <rect x="48" y="54" width="24" height="16" rx="2" stroke="#ffffff" strokeWidth="0.8" fill="none"/>
+                <circle cx="60" cy="62" r="4" stroke="#ffffff" strokeWidth="0.8" fill="none"/>
+
+                {/* Car Icon - Minimal */}
+                <path d="M138 65 L142 58 L158 58 L162 65" stroke="#ffffff" strokeWidth="0.8" fill="none"/>
+                <rect x="135" y="65" width="30" height="8" rx="1" stroke="#ffffff" strokeWidth="0.8" fill="none"/>
+                <circle cx="142" cy="73" r="2.5" stroke="#ffffff" strokeWidth="0.8" fill="none"/>
+                <circle cx="158" cy="73" r="2.5" stroke="#ffffff" strokeWidth="0.8" fill="none"/>
+
+                {/* Tool Icon - Minimal */}
+                <line x1="230" y1="54" x2="238" y2="62" stroke="#ffffff" strokeWidth="0.8"/>
+                <circle cx="242" cy="66" r="4" stroke="#ffffff" strokeWidth="0.8" fill="none"/>
+                <line x1="246" y1="58" x2="246" y2="70" stroke="#ffffff" strokeWidth="0.8"/>
+
+                {/* Connection Lines */}
+                <line x1="95" y1="60" x2="115" y2="60" stroke="#ffffff" strokeWidth="0.3" strokeDasharray="2 2" opacity="0.2"/>
+                <line x1="185" y1="60" x2="205" y2="60" stroke="#ffffff" strokeWidth="0.3" strokeDasharray="2 2" opacity="0.2"/>
+              </svg>
+            </div>
+
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Discover, Rent, Enjoy
             </h2>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Access premium items from verified owners in your area. From high-end electronics to specialty tools.
+            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Access premium items from verified owners in your area
             </p>
           </div>
 
           {/* Search Bar */}
           <form onSubmit={handleSearch} className="max-w-2xl mx-auto">
-            <div className="flex bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div className="flex bg-white rounded-2xl shadow-lg overflow-hidden border-2 border-gray-200">
               <div className="flex-1 relative">
                 <Search className="absolute left-4 top-4 h-5 w-5 text-gray-400" />
                 <input
@@ -126,7 +155,7 @@ export default function Dashboard() {
               </div>
               <button
                 type="submit"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-4 text-white font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                className="bg-black px-8 py-4 text-white font-medium hover:bg-gray-800 transition-all duration-300"
               >
                 Search
               </button>
@@ -140,9 +169,9 @@ export default function Dashboard() {
         <section className="mb-12">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-2xl font-bold text-gray-900">Browse Categories</h3>
-            <Link 
-              to="/categories" 
-              className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+            <Link
+              to="/categories"
+              className="text-black hover:text-gray-700 font-medium flex items-center gap-1"
             >
               View All <ChevronRight className="w-4 h-4" />
             </Link>
@@ -155,15 +184,13 @@ export default function Dashboard() {
                 <Link
                   key={category.id}
                   to={`/listings?category=${category.id}`}
-                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-blue-200 hover:-translate-y-1 min-h-[180px] flex flex-col items-center justify-center text-center"
+                  className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-black hover:-translate-y-1 min-h-[180px] flex flex-col items-center justify-center text-center"
                 >
-                  <div className={`w-16 h-16 ${category.color} rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
+                  <Icon className="w-8 h-8 text-black mb-4 group-hover:scale-110 transition-transform duration-300 stroke-[1.5]" strokeWidth={1.5} />
                   <h4 className="font-bold text-gray-900 mb-2 text-lg">{category.name}</h4>
                   <p className="text-sm text-gray-500 font-medium">{category.count.toLocaleString()} items</p>
                   <div className="mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <span className="text-xs text-blue-600 font-medium">Browse →</span>
+                    <span className="text-xs text-black font-medium">Browse →</span>
                   </div>
                 </Link>
               )
@@ -175,12 +202,12 @@ export default function Dashboard() {
         <section className="mb-12">
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center gap-2">
-              <TrendingUp className="w-6 h-6 text-orange-500" />
+              <TrendingUp className="w-6 h-6 text-black" />
               <h3 className="text-2xl font-bold text-gray-900">Popular This Week</h3>
             </div>
-            <Link 
-              to="/listings?sort=popular" 
-              className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+            <Link
+              to="/listings?sort=popular"
+              className="text-black hover:text-gray-700 font-medium flex items-center gap-1"
             >
               View All <ChevronRight className="w-4 h-4" />
             </Link>
@@ -199,14 +226,14 @@ export default function Dashboard() {
                     alt={listing.title}
                     className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute top-3 left-3 bg-orange-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                  <div className="absolute top-3 left-3 bg-black text-white px-2 py-1 rounded-full text-xs font-medium">
                     Popular
                   </div>
                 </div>
                 <div className="p-4">
                   <h4 className="font-semibold text-gray-900 mb-2 line-clamp-1">{listing.title}</h4>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-lg font-bold text-blue-600">
+                    <span className="text-lg font-bold text-black">
                       PKR {listing.price.toLocaleString()}<span className="text-sm text-gray-500">/{listing.price_unit || 'day'}</span>
                     </span>
                     {listing.owner?.rating > 0 && (
@@ -235,9 +262,9 @@ export default function Dashboard() {
                 <Filter className="w-4 h-4" />
                 Filters
               </button>
-              <Link 
-                to="/listings" 
-                className="text-blue-600 hover:text-blue-700 font-medium flex items-center gap-1"
+              <Link
+                to="/listings"
+                className="text-black hover:text-gray-700 font-medium flex items-center gap-1"
               >
                 View All <ChevronRight className="w-4 h-4" />
               </Link>
@@ -264,7 +291,7 @@ export default function Dashboard() {
                       alt={listing.title}
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-3 right-3 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-medium">
+                    <div className="absolute top-3 right-3 bg-black text-white px-2 py-1 rounded-full text-xs font-medium">
                       Featured
                     </div>
                   </div>
@@ -280,7 +307,7 @@ export default function Dashboard() {
                     </div>
                     <h4 className="font-semibold text-gray-900 mb-2 line-clamp-2">{listing.title}</h4>
                     <div className="flex items-center justify-between mb-3">
-                      <span className="text-xl font-bold text-blue-600">
+                      <span className="text-xl font-bold text-black">
                         PKR {listing.price.toLocaleString()}<span className="text-sm text-gray-500">/{listing.price_unit || 'day'}</span>
                       </span>
                       {listing.owner?.rating > 0 && (
@@ -308,7 +335,7 @@ export default function Dashboard() {
         </section>
 
         {/* Quick Actions */}
-        <div className="mt-12 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 text-center">
+        <div className="mt-12 bg-gray-100 rounded-2xl p-8 text-center border border-gray-200">
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Earning?</h3>
           <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
             List your unused items and start earning money today. From electronics to tools, everything has rental value.
@@ -316,7 +343,7 @@ export default function Dashboard() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/create-listing"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-medium hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+              className="bg-black text-white px-8 py-3 rounded-lg font-medium hover:bg-gray-800 transition-all duration-300"
             >
               List Your Item
             </Link>

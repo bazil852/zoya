@@ -1,4 +1,4 @@
-# RentHub - Peer-to-Peer Rental Marketplace
+# Rentique - Peer-to-Peer Rental Marketplace
 
 A modern, mobile-first rental marketplace web application built with React, Vite, TailwindCSS, and Supabase.
 

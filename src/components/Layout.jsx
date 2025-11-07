@@ -34,14 +34,9 @@ export default function Layout() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/dashboard" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">R</span>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                RentHub
-              </span>
+              <img src="/Logo.png" alt="Rentique" className="h-8" />
             </Link>
-            
+
             {/* Navigation Links */}
             <div className="flex items-center space-x-8">
               {navItems.map(item => {
@@ -52,8 +47,8 @@ export default function Layout() {
                     to={item.path}
                     className={`flex items-center gap-2 px-3 py-2 rounded-lg font-medium transition-colors ${
                       isActive(item.path)
-                        ? 'bg-blue-50 text-blue-700'
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                        ? 'bg-gray-100 text-black'
+                        : 'text-gray-700 hover:text-black hover:bg-gray-50'
                     }`}
                   >
                     <Icon className="h-4 w-4" />
@@ -67,7 +62,7 @@ export default function Layout() {
             <div className="flex items-center gap-4">
               <Link
                 to="/create-listing"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-4 py-2 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium"
+                className="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-all duration-300 font-medium"
               >
                 List Item
               </Link>
@@ -86,7 +81,7 @@ export default function Layout() {
                       className="w-8 h-8 rounded-full object-cover"
                     />
                   ) : (
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-sm font-medium">
+                    <div className="w-8 h-8 bg-black rounded-full flex items-center justify-center text-white text-sm font-medium">
                       {userProfile?.name?.charAt(0) || 'U'}
                     </div>
                   )}
@@ -134,14 +129,9 @@ export default function Layout() {
           <div className="flex justify-between items-center h-16">
             {/* Logo */}
             <Link to="/dashboard" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">R</span>
-              </div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                RentHub
-              </span>
+              <img src="/Logo.png" alt="Rentique" className="h-8" />
             </Link>
-            
+
             {/* Mobile Menu Button */}
             <button
               onClick={() => setShowMobileMenu(!showMobileMenu)}
@@ -165,8 +155,8 @@ export default function Layout() {
                     onClick={() => setShowMobileMenu(false)}
                     className={`flex items-center gap-3 px-3 py-2 rounded-lg font-medium transition-colors ${
                       isActive(item.path)
-                        ? 'bg-blue-50 text-blue-700'
-                        : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                        ? 'bg-gray-100 text-black'
+                        : 'text-gray-700 hover:text-black hover:bg-gray-50'
                     }`}
                   >
                     <Icon className="h-5 w-5" />
@@ -177,7 +167,7 @@ export default function Layout() {
               <Link
                 to="/create-listing"
                 onClick={() => setShowMobileMenu(false)}
-                className="flex items-center gap-3 px-3 py-2 rounded-lg font-medium bg-gradient-to-r from-blue-600 to-purple-600 text-white"
+                className="flex items-center gap-3 px-3 py-2 rounded-lg font-medium bg-black text-white"
               >
                 <Plus className="h-5 w-5" />
                 List Item
